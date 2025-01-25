@@ -1,3 +1,4 @@
+// COLORS
 $colors: (
   "primary": (
     100: #fff7e6,
@@ -21,4 +22,20 @@ $colors: (
     800: #333333,
     900: #1a1a1a,
   ),
+);
+
+// Z-INDEX
+$z-index: (
+  "base": 1,
+  "below": -1,
+  "above": 2,
+  "higher": 5,
+  "highest": 10,
+  "floating": 100,
+  "dropdown": 1000,
+  "modal": 2000,
+  "overlay": 3000,
+  "popup": 4000,
+  "toast": 5000,
+  "tooltip": 6000,
 );

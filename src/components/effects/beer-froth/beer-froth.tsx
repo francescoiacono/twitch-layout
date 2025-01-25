@@ -16,7 +16,17 @@ export const BeerFroth: React.FC<BeerFrothProps> = ({
     <div className={styles.container} ref={containerRef}>
       <div className={styles.froth}>
         {[...Array(frothCount)].map((_, i) => (
-          <div key={i} className={styles.circle} />
+          <div
+            key={i}
+            className={styles.circle}
+            style={
+              {
+                "--random-scale": Math.random() + 1,
+                "--random-delay": `${Math.random() * -2}s`,
+                "--random-duration": `${3 + Math.random()}s`,
+              } as React.CSSProperties
+            }
+          />
         ))}
       </div>
     </div>

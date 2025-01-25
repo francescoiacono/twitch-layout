@@ -25,6 +25,26 @@
   aspect-ratio: 1;
   background-color: white;
   border-radius: 50%;
-  z-index: 10;
-  transform: translateY(-50%);
+  z-index: get-z-index("highest");
+  --random-scale: 1; // Default value if not set
+  --random-delay: 0s;
+  --random-duration: 2s;
+  transform: translateY(-50%) scale(var(--random-scale));
+  animation: froth var(--random-duration) infinite alternate ease-in-out;
+  animation-delay: var(--random-delay);
+}
+
+@keyframes froth {
+  0% {
+    transform: translateY(-50%) translateX(-5%) scale(var(--random-scale));
+  }
+  33% {
+    transform: translateY(-55%) translateX(2%) scale(var(--random-scale));
+  }
+  66% {
+    transform: translateY(-58%) translateX(-2%) scale(var(--random-scale));
+  }
+  100% {
+    transform: translateY(-52%) translateX(5%) scale(var(--random-scale));
+  }
 }

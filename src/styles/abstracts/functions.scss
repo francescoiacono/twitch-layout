@@ -60,3 +60,26 @@
 
   @return linear-gradient($direction, $color1, $color2);
 }
+
+/**
+ * Retrieves a specific z-index value from the $z-index map.
+ *
+ * @function z-index
+ * @param $key - The key of the z-index value to retrieve.
+ * @return - The z-index value corresponding to the specified key.
+ * @throws - If the specified key is not found in the $z-index map.
+/**
+ * Retrieves a specific z-index value from the $z-index map.
+ *
+ * @function get-z-index
+ * @param $key - The key of the z-index value to retrieve.
+ * @return - The z-index value corresponding to the specified key.
+ * @throws - If the specified key is not found in the $z-index map.
+ */
+@function get-z-index($key) {
+  @if not map.has-key($z-index, $key) {
+    @error "Z-index `#{$key}` not found in $z-index map.";
+  }
+
+  @return map.get($z-index, $key);
+}
