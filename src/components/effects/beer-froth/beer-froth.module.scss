@@ -23,7 +23,7 @@
   flex-shrink: 0;
   inline-size: var(--circle-size);
   aspect-ratio: 1;
-  background-color: white;
+  background-color: palette("neutral", 100);
   border-radius: 50%;
   z-index: get-z-index("highest");
   --random-scale: 1; // Default value if not set
