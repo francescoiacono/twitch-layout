@@ -1,0 +1,24 @@
+@use "variables" as *;
+
+/**
+ * Retrieves a specific shade of a color from the $colors map.
+ *
+ * @function palette
+ * @param $color - The name of the color to retrieve.
+ * @param $shade - The shade of the color to retrieve (default is 500).
+ * @return - The color value corresponding to the specified color and shade.
+ * @throws - If the specified color is not found in the $colors map.
+ * @throws - If the specified shade is not found for the given color.
+ */
+
+@function palette($color, $shade: 500) {
+  @if not map-has-key($colors, $color) {
+    @error "Color `#{$color}` not found in $colors map.";
+  }
+
+  @if not map-has-key(map-get($colors, $color), $shade) {
+    @error "Shade `#{$shade}` not found in color `#{$color}`.";
+  }
+
+  @return map-get(map-get($colors, $color), $shade);
+}
