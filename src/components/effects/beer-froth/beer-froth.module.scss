@@ -4,7 +4,7 @@
   block-size: 100%;
 
   overflow: hidden;
-  position: relative;
+  position: absolute;
   --froth-count: 10; // Default value
   --circle-size: calc(100vw / var(--froth-count));
 }

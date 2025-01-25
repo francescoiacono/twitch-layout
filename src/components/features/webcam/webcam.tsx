@@ -5,6 +5,7 @@ export const Webcam: React.FC = () => {
   return (
     <div className={styles.container}>
       <BeerFroth />
+      <div className={styles.box}></div>
     </div>
   );
 };

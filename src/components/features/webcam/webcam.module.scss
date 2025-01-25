@@ -1,7 +1,18 @@
 .container {
+  position: "relative";
   inline-size: 100%;
   block-size: 100%;
-  background: create-gradient(
+  background-color: transparent;
+}
+
+.box {
+  inline-size: 100%;
+  block-size: 100%;
+  padding: 3rem;
+
+  border-width: 4rem;
+  border-style: solid;
+  border-image-source: create-gradient(
     palette("neutral", 200),
     palette("primary", 600),
     linear,
@@ -9,4 +20,5 @@
     0%,
     60%
   );
+  border-image-slice: 1;
 }
