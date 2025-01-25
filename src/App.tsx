@@ -1,12 +1,10 @@
-import { Button } from "@/components/ui/button";
+import { Webcam } from "@/components/features/webcam";
+import { Main } from "@/components/ui/main";
 
 export const App = () => {
   return (
-    <main>
-      <div>
-        <h1>Test</h1>
-        <Button>Click HERE</Button>
-      </div>
-    </main>
+    <Main>
+      <Webcam />
+    </Main>
   );
 };
