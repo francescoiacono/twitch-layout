@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  inline-size: 100%;
+  block-size: 100%;
+
+  overflow: hidden;
+  position: relative;
+  --froth-count: 10; // Default value
+  --circle-size: calc(100vw / var(--froth-count));
+}
+
+.froth {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  gap: 0;
+  height: fit-content;
+}
+
+.circle {
+  flex-shrink: 0;
+  inline-size: var(--circle-size);
+  aspect-ratio: 1;
+  background-color: white;
+  border-radius: 50%;
+  z-index: 10;
+  transform: translateY(-50%);
+}

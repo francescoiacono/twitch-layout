@@ -11,7 +11,6 @@
  * @throws - If the specified color is not found in the $colors map.
  * @throws - If the specified shade is not found for the given color.
  */
-
 @function palette($color, $shade: 500) {
   @if not map.has-key($colors, $color) {
     @error "Color `#{$color}` not found in $colors map.";
@@ -22,4 +21,42 @@
   }
 
   @return map.get(map.get($colors, $color), $shade);
+}
+
+/**
+ * Generates a CSS gradient (linear or radial) based on the provided parameters.
+ * 
+ * @function create-gradient
+ * @param $color1 - The first color in the gradient.
+ * @param $color2 - The second color in the gradient.
+ * @param [$type=linear] - The type of gradient to create ('linear' or 'radial'). Defaults to 'linear'.
+ * @param [$direction=to right] - The direction of the gradient for linear gradients. Defaults to 'to right'.
+ * @param [$color1-position=0%] - The position of the first color in the gradient. Defaults to '0%'.
+ * @param [$color2-position=100%] - The position of the second color in the gradient. Defaults to '100%'.
+ * 
+ * @returns {String} - The generated CSS gradient.
+ */
+@function create-gradient(
+  $color1,
+  $color2,
+  $type: linear,
+  $direction: to right,
+  $color1-position: 0%,
+  $color2-position: 100%
+) {
+  @if $type == linear {
+    @return linear-gradient(
+      $direction,
+      $color1 $color1-position,
+      $color2 $color2-position
+    );
+  } @else if $type == radial {
+    @return radial-gradient(
+      circle at center,
+      $color1 $color1-position,
+      $color2 $color2-position
+    );
+  }
+
+  @return linear-gradient($direction, $color1, $color2);
 }
