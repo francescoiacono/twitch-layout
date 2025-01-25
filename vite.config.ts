@@ -4,6 +4,7 @@ import react from "@vitejs/plugin-react";
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: "/twitch-layout/",
   plugins: [react()],
   resolve: {
     alias: {
@@ -16,5 +17,9 @@ export default defineConfig({
         additionalData: '@use "@/styles/abstracts" as *;',
       },
     },
+  },
+  build: {
+    outDir: "dist",
+    assetsDir: "assets",
   },
 });
