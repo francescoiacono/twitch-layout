@@ -5,7 +5,7 @@
  * @returns The calculated froth count, adjusted based on the window's inner width.
  */
 export const calculateFrothCount = (initialFrothCount: number): number => {
-  return (
-    Math.ceil(window.innerWidth / (window.innerWidth / initialFrothCount)) + 2
-  );
+  const baseWidth = 1920; // or whatever your design's base width is
+  const scaleFactor = window.innerWidth / baseWidth;
+  return Math.max(Math.ceil(initialFrothCount * scaleFactor), 1);
 };

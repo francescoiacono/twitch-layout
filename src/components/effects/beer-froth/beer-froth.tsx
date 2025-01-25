@@ -7,7 +7,7 @@ interface BeerFrothProps {
 }
 
 export const BeerFroth: React.FC<BeerFrothProps> = ({
-  initialFrothCount = 10,
+  initialFrothCount = 15,
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const { frothCount } = useFrothCount(initialFrothCount, containerRef);
