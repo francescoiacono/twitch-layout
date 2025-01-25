@@ -1,9 +1,9 @@
-import { Button } from "./components/ui/button";
-
 export const App = () => {
   return (
-    <div>
-      <Button>Hello, World!</Button>
-    </div>
+    <main>
+      <div>
+        <h1>Test</h1>
+      </div>
+    </main>
   );
 };
