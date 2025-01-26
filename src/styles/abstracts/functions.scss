@@ -64,13 +64,6 @@
 /**
  * Retrieves a specific z-index value from the $z-index map.
  *
- * @function z-index
- * @param $key - The key of the z-index value to retrieve.
- * @return - The z-index value corresponding to the specified key.
- * @throws - If the specified key is not found in the $z-index map.
-/**
- * Retrieves a specific z-index value from the $z-index map.
- *
  * @function get-z-index
  * @param $key - The key of the z-index value to retrieve.
  * @return - The z-index value corresponding to the specified key.
@@ -82,4 +75,19 @@
   }
 
   @return map.get($z-index, $key);
+}
+
+/**
+ * @function get-radius
+ * @description Retrieves a radius value from the $radii map based on the provided key.
+ * @param $key - The key to look up in the $radii map.
+ * @returns - The radius value associated with the provided key.
+ * @throws - Throws an error if the key is not found in the $radii map.
+ */
+@function get-radius($key) {
+  @if not map.has-key($radii, $key) {
+    @error "Radius `#{$key}` not found in $radii map.";
+  }
+
+  @return map.get($radii, $key);
 }

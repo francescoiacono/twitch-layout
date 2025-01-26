@@ -19,19 +19,35 @@
   height: fit-content;
 }
 
-.circle {
+.shadow {
   flex-shrink: 0;
   inline-size: var(--circle-size);
   aspect-ratio: 1;
-  background-color: palette("neutral", 100);
-  border-radius: 50%;
-  z-index: get-z-index("highest");
+  border-radius: get-radius("circle");
+  z-index: get-z-index("higher");
   --random-scale: 1; // Default value if not set
   --random-delay: 0s;
   --random-duration: 2s;
   transform: translateY(-50%) scale(var(--random-scale));
   animation: froth var(--random-duration) infinite alternate ease-in-out;
   animation-delay: var(--random-delay);
+  padding-block-end: 0.3rem;
+  background: create-gradient(
+    palette("neutral", 100),
+    palette("neutral", 500),
+    linear,
+    to bottom,
+    65%,
+    100%
+  );
+}
+
+.circle {
+  inline-size: var(--circle-size);
+  border-radius: get-radius("circle");
+  block-size: var(--circle-size);
+  background-color: palette("neutral", 100);
+  z-index: get-z-index("highest");
 }
 
 @keyframes froth {

@@ -7,7 +7,7 @@ interface BeerFrothProps {
 }
 
 export const BeerFroth: React.FC<BeerFrothProps> = ({
-  initialFrothCount = 15,
+  initialFrothCount = 10,
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const { frothCount } = useFrothCount(initialFrothCount, containerRef);
@@ -17,8 +17,8 @@ export const BeerFroth: React.FC<BeerFrothProps> = ({
       <div className={styles.froth}>
         {[...Array(frothCount)].map((_, i) => (
           <div
+            className={styles.shadow}
             key={i}
-            className={styles.circle}
             style={
               {
                 "--random-scale": Math.random() + 1,
@@ -26,7 +26,9 @@ export const BeerFroth: React.FC<BeerFrothProps> = ({
                 "--random-duration": `${3 + Math.random()}s`,
               } as React.CSSProperties
             }
-          />
+          >
+            <div className={styles.circle} />
+          </div>
         ))}
       </div>
     </div>
