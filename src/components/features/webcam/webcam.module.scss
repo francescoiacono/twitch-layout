@@ -3,6 +3,7 @@
   inline-size: 100%;
   block-size: 100%;
   background-color: transparent;
+  overflow: hidden;
 }
 
 .box {
@@ -11,8 +12,8 @@
   border-width: 4rem;
   border-style: solid;
   border-image-source: create-gradient(
-    palette("neutral", 200),
-    palette("primary", 600),
+    palette("red", 100),
+    palette("red", 900),
     linear,
     to bottom,
     0%,
