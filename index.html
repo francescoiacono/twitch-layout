@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -9,6 +9,15 @@
     <link rel="stylesheet" crossorigin href="/twitch-layout/assets/index-Vjw9mhaV.css">
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root"></div>
+    <script>
+      (function () {
+        const redirect = localStorage.getItem("path");
+        if (redirect) {
+          localStorage.removeItem("path");
+          location.replace(location.origin + "/" + redirect);
+        }
+      })();
+    </script>
   </body>
 </html>
